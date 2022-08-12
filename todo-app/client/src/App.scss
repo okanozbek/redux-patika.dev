@@ -1,0 +1,301 @@
+// Variables
+$primary-bg-color: #DAEAF1;
+$secondary-bg-color: #C6DCE4;
+$light-bg-color: #F0F0F0;
+$list-item-bg-color: rgba(255, 255, 255, 0.4);
+$list-item-completed-bg-color: #28FFBF;
+$primary-text-color: #596E79;
+$secondary-text-color: #555555;
+$custom-shadow-1: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px,
+rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+$custom-shadow-2: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+rgba(17, 17, 26, 0.05) 0px 8px 32px;
+$custom-shadow-3: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+$custom-inset-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset,
+rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+
+.App {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    font-size: .875rem;
+}
+
+.todo__wrapper {
+    width: 1020px;
+    background: $primary-bg-color;
+    background: -webkit-linear-gradient(to right, $primary-bg-color, $secondary-bg-color);
+    background: linear-gradient(to right, $primary-bg-color, $secondary-bg-color);
+    border-radius: .5rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    @media screen and (max-width: 376px) {
+        width: 340px;
+    }
+
+    h1 {
+        text-align: center;
+        color: $primary-text-color;
+    }
+
+    .todo__input-wrapper {
+        display: flex;
+        flex-direction: column;
+        border-radius: .5rem;
+        align-items: center;
+        padding: 0;
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row;
+            background-color: #fff;
+            box-shadow: $custom-shadow-1;
+        }
+
+        input {
+            border: none;
+            height: 3rem;
+            padding: 0 1rem;
+            border-radius: .5rem;
+            font-size: 1rem;
+            transition: all .3s ease-in-out;
+            font-family: 'Poppins', sans-serif;
+
+            &:focus {
+                outline: none;
+            }
+
+            @media screen and (min-width: 768px) {
+                width: 75%;
+            }
+
+            @media screen and (max-width: 768px) {
+                box-shadow: $custom-shadow-1;
+            }
+        }
+
+        .todo__input-buttons {
+            display: flex;
+            gap: .6rem;
+            width: 100%;
+            margin-top: .75rem;
+            align-items: center;
+
+            @media screen and (min-width: 768px) {
+                width: 25%;
+                margin-top: 0;
+            }
+
+            button {
+                border: none;
+                height: 2rem;
+                display: flex;
+                align-items: center;
+                border-radius: .25rem;
+                background-color: $light-bg-color;
+                color: $secondary-text-color;
+                padding: 0 .75rem 0 1.5rem;
+                position: relative;
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+                box-shadow: $custom-shadow-3;
+
+                &:before {
+                    content: "＋";
+                    font-weight: 900;
+                    position: absolute;
+                    font-size: 1.25rem;
+                    left: .25rem;
+                }
+
+                &:hover {
+                    background-color: darken($light-bg-color, 1.5);
+                }
+
+                @media screen and (max-width: 768px) {
+                    width: 50%;
+                    border-radius: .5rem;
+                    height: 2.5rem;
+                    justify-content: center;
+                    background-color: #FFF;
+                    box-shadow: $custom-shadow-1;
+                }
+            }
+
+            .filter__todo {
+                height: 2.5rem;
+                padding: 0 .5rem;
+                width: 50%;
+                background-color: #FFF;
+                box-shadow: $custom-shadow-1;
+                color: $secondary-text-color;
+                border: none;
+                border-radius: .5rem;
+                cursor: pointer;
+
+                @media screen and (min-width: 768px) {
+                    margin-right: .5rem;
+                    width: 100%;
+                    height: 2rem;
+                    border-radius: .25rem;
+                    background-color: $light-bg-color;
+                    box-shadow: $custom-shadow-3;
+                }
+            }
+        }
+    }
+
+    .todo__list-wrapper {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        overflow: auto;
+
+        li {
+            background: $list-item-bg-color;
+            backdrop-filter: blur(5px);
+            border: 1px solid lighten($list-item-bg-color, 0.2);
+            border-radius: .5rem;
+            display: flex;
+            align-items: center;
+            margin-bottom: .75rem;
+            position: relative;
+            z-index: 10;
+            cursor: pointer;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .todo__item-container {
+                width: 100%;
+                height: 100%;
+                padding: .75rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+
+                div {
+                    display: flex;
+                    gap: .5rem;
+                }
+
+                .trash__button {
+                    cursor: pointer;
+                    background: none;
+                    border: none;
+                }
+            }
+
+            input[type="checkbox"] {
+                appearance: none;
+                width: 20px;
+                height: 20px;
+                padding: .5rem;
+                margin: 0;
+                border-radius: .25rem;
+                border: 1px solid $primary-bg-color;
+                background-color: $primary-bg-color;
+                transition: all .3s ease;
+                box-shadow: $custom-inset-shadow;
+
+                &.completed {
+                    transition: all .3s ease;
+                    box-shadow: $custom-shadow-2;
+                    opacity: .25;
+                }
+
+                &:checked {
+                    border-color: $list-item-completed-bg-color;
+                    background-color: $list-item-completed-bg-color;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &::before {
+                        content: '\2714';
+                        color: #fff;
+                        transition: all .3s ease;
+                    }
+                }
+            }
+
+            span {
+                color: $primary-text-color;
+                transition: all .3s ease-in-out;
+                word-wrap: anywhere;
+
+                &.completed {
+                    transition: all .3s easE;
+                    text-decoration-line: line-through;
+                    color: lighten($primary-text-color, 40);
+                }
+            }
+        }
+    }
+
+    .error__message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 25px 0;
+
+        svg {
+            width: 200px !important;
+            height: 200px !important;
+        }
+
+        h1 {
+            color: red !important;
+            font-weight: bold;
+            font-size: 48px;
+            margin: 12px 0;
+        }
+    }
+
+    .loading {
+        display: flex;
+        justify-content: center;
+
+        svg {
+            width: 300px !important;
+            height: 300px !important;
+        }
+    }
+
+    .add__todo-loading {
+        svg {
+            width: 36px !important;
+            height: 36px !important;
+        }
+    }
+
+    .no__todo-length {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: $primary-bg-color;
+        background: -webkit-linear-gradient(to right, $primary-bg-color, $secondary-bg-color);
+        background: linear-gradient(to right, $primary-bg-color, $secondary-bg-color);
+        backdrop-filter: blur(5px);
+        margin-top: .75rem;
+        text-align: center;
+        color: $primary-text-color;
+        float: right;
+        padding: .5rem;
+        font-size: .875rem;
+        width: 140px;
+        border-radius: .5rem;
+        box-shadow: $custom-shadow-2;
+
+        @media screen and (max-width: 768px) {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: $light-bg-color;
+            z-index: 10;
+        }
+    }
+}
