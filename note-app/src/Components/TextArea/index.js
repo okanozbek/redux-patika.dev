@@ -24,7 +24,7 @@ const TextArea = () => {
 
   useEffect(() => {
     colors.filter((color) => color.selected && setColor(color.code));
-  }, []);
+  }, [colors]);
 
   return (
     <div className={style.textareaWrapper}>
