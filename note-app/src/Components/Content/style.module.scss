@@ -1,0 +1,87 @@
+$bg-color: var(--bgColor);
+$text-color: var(--textColor);
+$danger-color : #D61C4E;
+
+.noteCardWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  .noteCard {
+    flex: 1;
+    flex-basis: max-content;
+    flex-wrap: wrap;
+    text-align: left;
+    word-break: break-all;
+    max-width: 100%;
+    padding: .75rem;
+    background-color: $bg-color;
+    color: $text-color;
+    border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    position: relative;
+
+    .noteHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: .5rem;
+
+      .noteTitle {
+        margin: 0;
+      }
+
+      .actionArea {
+        border-radius: 0 .25rem 0 .25rem;
+        display: flex;
+        justify-content: flex-end;
+        gap: .25rem;
+        
+        button {
+          appearance: none;
+          border: none;
+          padding: .25rem;
+          border-radius: .5rem;
+          transition: all .3s ease;
+          cursor: pointer;
+          font-size: 16px;
+          background: none;
+
+          svg {
+            transition: all .3s ease;
+            color: $text-color;
+        }
+        &:hover {
+          svg {
+            color: $danger-color;
+            transition: all .3s ease;
+          }
+        }
+      }
+      }
+    }
+  }
+  .noNoteHere {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    margin: 1rem 0;
+
+    h4 {
+      margin: auto;
+      display: inline-block;
+      padding: .5rem .75rem;
+      border-radius: .75rem;
+      color: $danger-color;
+    }
+
+    svg {
+      font-size: 48px;
+      color: $danger-color;
+    }
+  }
+}

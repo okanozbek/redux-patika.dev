@@ -1,0 +1,12 @@
+.searchInput {
+  input {
+    padding: .75rem;
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: .75rem;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+    &:focus {
+      outline: none;
+    }
+  }
+}
