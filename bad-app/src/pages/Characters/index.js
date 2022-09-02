@@ -9,7 +9,6 @@ import Loading from '../../components/Loading';
 const Characters = () => {
   const dispatch = useDispatch();
   const characters = useSelector((state) => state.characters.items);
-  const quotes = useSelector((state) => state.quotes.items);
   const nextPage = useSelector((state) => state.characters.page);
   const nextHasPage = useSelector((state) => state.characters.nextHasPage);
   const status = useSelector((state) => state.characters.status);
