@@ -17,7 +17,6 @@ const Characters = () => {
   useEffect(() => {
     status === 'idle' && dispatch(fetchCharacters());
     dispatch(fetchQuotes());
-    console.log('quotes', quotes);
   }, [status, dispatch]);
 
   return (
