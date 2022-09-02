@@ -1,0 +1,41 @@
+.characterContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @media screen and (max-width: 428px) {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  img {
+    border-radius: 0.5rem;
+    width: 400px;
+
+    @media screen and (max-width: 428px) {
+      width: 100%;
+    }
+  }
+
+  .characterDetail {
+    p {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      margin-bottom: 1rem;
+
+      b {
+        color: #ffd369;
+      }
+    }
+  }
+}
+
+.loading {
+  text-align: center;
+  svg {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}

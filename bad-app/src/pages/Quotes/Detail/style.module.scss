@@ -1,0 +1,21 @@
+.quoteDetail {
+  p {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+
+    b {
+      color: #ffd369;
+    }
+  }
+}
+
+.loading {
+  text-align: center;
+  svg {
+    width: 100px !important;
+    height: 100px !important;
+  }
+}

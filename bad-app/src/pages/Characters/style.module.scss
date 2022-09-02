@@ -1,0 +1,98 @@
+.charactersHeader {
+  margin-bottom: 1rem;
+  text-align: center;
+
+  h1 {
+    color: #fff;
+  }
+}
+
+.charactersContent {
+  column-count: 6;
+  gap: 1.25rem;
+  margin: auto;
+  width: 100%;
+
+  @media screen and (max-width: 920px) {
+    column-count: 3;
+  }
+
+  @media screen and (max-width: 428px) {
+    column-count: 1;
+  }
+
+  .characterCard {
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.3s;
+
+    &:hover {
+      img {
+        transform: scale(1.07);
+        transition: all 0.3s;
+      }
+    }
+
+    a {
+      display: flex;
+      flex-wrap: wrap;
+      color: #393e46;
+    }
+
+    .characterImg {
+      overflow: hidden;
+      img {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        transition: all 0.3s;
+        overflow: hidden;
+      }
+    }
+
+    .cardBody {
+      background-color: #eee;
+      padding: 0.75rem;
+      height: 100%;
+      width: 100%;
+      text-align: left;
+      overflow: hidden;
+      z-index: 999;
+      margin-top: -0.25rem;
+    }
+  }
+}
+.loadMoreBtn {
+  text-align: center;
+  button {
+    font: unset;
+    margin: 1rem 0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+.notCharacter {
+  margin-top: 1rem;
+  text-align: center;
+  color: #fff;
+  background-color: #e43f5a;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.loading {
+  text-align: center;
+  svg {
+    width: 75px !important;
+    height: 75px !important;
+  }
+}

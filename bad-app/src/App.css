@@ -1,0 +1,10 @@
+.App {
+  padding: 0 15px;
+}
+
+.App main {
+  background-color: #393e46;
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}

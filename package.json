@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "workspaces": [
+    "bad-app"
+  ],
+  "scripts": {
+    "build:bad-app": "yarn workspace bad-app build"
+  }
+}
