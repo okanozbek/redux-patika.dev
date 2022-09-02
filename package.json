@@ -1,9 +1,11 @@
 {
   "private": true,
   "workspaces": [
-    "bad-app"
+    "bad-app",
+    "note-app"
   ],
   "scripts": {
-    "build:bad-app": "yarn workspace bad-app build"
+    "build:bad-app": "yarn workspace bad-app build",
+    "build:note-app": "yarn workspace node-app build"
   }
 }
